@@ -34,6 +34,7 @@ public class ClientDAOJPAImpl implements ClientDAO{
 	}
 
 	public void delete(Client client) {
+		
 		em.getTransaction().begin();
 		em.remove(client);
 		em.getTransaction().commit();
