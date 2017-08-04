@@ -1,5 +1,7 @@
 package com.everis.alicante.becajava.DAO;
 
+import java.util.List;
+
 import com.everis.alicante.becajava.Client;
 
 public interface ClientDAO {
@@ -11,4 +13,6 @@ public interface ClientDAO {
 	void update(Client client);
 	
 	void delete(Client client);
+	
+	List<Client> listAllClients();
 }

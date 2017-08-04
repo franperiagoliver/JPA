@@ -1,6 +1,9 @@
 package com.everis.alicante.becajava.Impl;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import com.everis.alicante.becajava.Client;
 import com.everis.alicante.becajava.DAO.ClientDAO;
@@ -38,6 +41,13 @@ public class ClientDAOJPAImpl implements ClientDAO{
 		em.getTransaction().begin();
 		em.remove(client);
 		em.getTransaction().commit();
+	}
+
+	@Override
+	public List<Client> listAllClients() {
+		
+		Query query = em.createNamedQuery("Client.findAll");		
+		return query.getResultList();
 	}
 
 }
