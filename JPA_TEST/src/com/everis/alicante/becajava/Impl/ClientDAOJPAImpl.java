@@ -15,7 +15,10 @@ public class ClientDAOJPAImpl implements ClientDAO{
 	}
 
 	public void create(Client client) {
-		em.merge(client);
+		
+		em.getTransaction().begin();
+		em.persist(client);
+		em.getTransaction().commit();
 	}
 
 	public Client readById(int id) {
@@ -25,7 +28,7 @@ public class ClientDAOJPAImpl implements ClientDAO{
 
 	public void update(Client client) {
 
-		em.persist(client);
+		em.merge(client);
 	}
 
 	public void delete(Client client) {

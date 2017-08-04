@@ -13,9 +13,10 @@ public class Test {
 	
 		EntityManager em = createEntityManager();
 		
+		
 		ClientDAO dao = new ClientDAOJPAImpl(em);
 		
-		System.out.println("Cliente: " + dao.readById(1));
+		System.out.println("Cliente: " + dao.readById(1).toString());
 		
 		//Crear un cliente
 		Client client = new Client();

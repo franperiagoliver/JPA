@@ -125,4 +125,11 @@ public class Client  {
 		return vehicle;
 	}
 
+	@Override
+	public String toString() {
+		return "Client [idClient=" + idClient + ", name=" + name + ", nif=" + nif + ", phoneNumber=" + phoneNumber
+				+ ", surname=" + surname + ", bookings=" + bookings + ", vehicles=" + vehicles + "]";
+	}
+	
+
 }
