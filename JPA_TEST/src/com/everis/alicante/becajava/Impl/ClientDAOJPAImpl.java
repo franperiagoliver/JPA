@@ -27,13 +27,16 @@ public class ClientDAOJPAImpl implements ClientDAO{
 	}
 
 	public void update(Client client) {
-
+		
+		em.getTransaction().begin();
 		em.merge(client);
+		em.getTransaction().commit();
 	}
 
 	public void delete(Client client) {
-		
+		em.getTransaction().begin();
 		em.remove(client);
+		em.getTransaction().commit();
 	}
 
 }
