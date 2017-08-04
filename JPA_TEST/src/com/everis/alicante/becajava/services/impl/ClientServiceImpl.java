@@ -3,6 +3,7 @@ package com.everis.alicante.becajava.services.impl;
 import java.util.List;
 
 import com.everis.alicante.becajava.Client;
+import com.everis.alicante.becajava.Vehicle;
 import com.everis.alicante.becajava.DAO.BookingDAO;
 import com.everis.alicante.becajava.DAO.ClientDAO;
 import com.everis.alicante.becajava.DAO.ParkingPlaceDAO;
@@ -24,10 +25,10 @@ public class ClientServiceImpl implements ClientService{
 		this.bookingDAO = bookingDAO;
 		this.parkingPlaceDAO = parkingPlaceDAO;
 	}
-
 	@Override
-	public void createClient(Client client) {
+	public void createClient(Client client, Vehicle vehicle) {
 		clientDAO.create(client);
+		vehicleDAO.create(vehicle);
 	}
 
 	@Override
