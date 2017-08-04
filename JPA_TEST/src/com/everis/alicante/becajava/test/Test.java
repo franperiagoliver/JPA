@@ -4,13 +4,17 @@ import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 
 import com.everis.alicante.becajava.Client;
+import com.everis.alicante.becajava.ParkingPlace;
+import com.everis.alicante.becajava.Vehicle;
 import com.everis.alicante.becajava.DAO.BookingDAO;
 import com.everis.alicante.becajava.DAO.ClientDAO;
 import com.everis.alicante.becajava.DAO.VehicleDAO;
 import com.everis.alicante.becajava.Impl.BookingDAOJPAImpl;
 import com.everis.alicante.becajava.Impl.ClientDAOJPAImpl;
 import com.everis.alicante.becajava.Impl.VehicleDAOJPAImpl;
+import com.everis.alicante.becajava.services.BookingService;
 import com.everis.alicante.becajava.services.ClientService;
+import com.everis.alicante.becajava.services.impl.BookingServiceImpl;
 import com.everis.alicante.becajava.services.impl.ClientServiceImpl;
 
 public class Test {
@@ -33,10 +37,23 @@ public class Test {
 		client.setNif("48717958W");
 		client.setPhoneNumber("699111201");
 		
+		Vehicle vehicle = new Vehicle();
+		
+		vehicle.setVehicleModel("Coche");
+		vehicle.setVehiclePlate("4123 GAT");
+		
+		ParkingPlace place = new ParkingPlace();
+		
+		place.setId_parkingPlace(1);
+		
+		BookingService bookingService = new BookingServiceImpl();
+		
+		bookingService.setBookingDAO(bookingDAO);
+		
 //		Listar todos
-		System.out.println(clientDAO.listAllClients());
-		System.out.println(vehicleDAO.listAllVehicles());
-		System.out.println(bookingDAO.listAllBooking());
+//		System.out.println(clientDAO.listAllClients());
+//		System.out.println(vehicleDAO.listAllVehicles());
+//		System.out.println(bookingDAO.listAllBooking());
 	}
 	
 	static EntityManager createEntityManager() {

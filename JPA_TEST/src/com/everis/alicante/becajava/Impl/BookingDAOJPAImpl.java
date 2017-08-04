@@ -24,7 +24,7 @@ public class BookingDAOJPAImpl implements BookingDAO{
 	}
 
 	@Override
-	public Booking readById(int id) {
+	public Booking readById(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

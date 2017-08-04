@@ -34,4 +34,12 @@ public class BookingServiceImpl implements BookingService{
 		return bookingDAO.readById(nif);
 	}
 
+	public BookingDAO getBookingDAO() {
+		return bookingDAO;
+	}
+
+	public void setBookingDAO(BookingDAO bookingDAO) {
+		this.bookingDAO = bookingDAO;
+	}
+
 }
